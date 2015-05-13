@@ -1,6 +1,6 @@
 ---
-title:  "Watch this space"
 date:   2015-05-07 22:27:39 -0400
+title:  Watch this space
 ---
 Dev blog acquired! Thanks for visiting. Watch for some actual content here early next week.
 

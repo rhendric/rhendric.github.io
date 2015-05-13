@@ -1,0 +1,77 @@
+---
+date:   2015-05-13 17:31:06 -0400
+title:  The Goal
+---
+(This is the post where I attempt to explain what I'm doing to non-programmers. Subsequent posts will likely be more
+technical.)
+
+This may not be the greatest problem in software engineering today, but one of the things that's bothered me about
+writing software has been how difficult it is to make anything truly *timeless*.
+
+Let's say you've written a program that helps you share pictures. There are all kinds of decisions that go into the
+making of such a program. Will it run on your phone or on your desktop, or both? What language will it be written in?
+(This sometimes determines what things the program can do, but usually just influences what it's like to work on the
+program, how quickly new features can be added and what kinds of problems are more or less likely to pop up along the
+way.) Where should the picture files be saved? What buttons should be visible and what do they do? And so on.
+
+Imagine writing down all of those decisions, in a list. Some of them might be broad rules—for example, never give the
+user two buttons on the screen at the same time with the same icon. And some of them might be specific details—this is
+the text that should appear when the ‘About...’ button is pressed. Some might be core to the functionality of the
+program—here's how to figure out which friends to notify when I share a picture. And some might have to do with the
+technology available at the time—no part of the program should be wider than the width of a phone screen. Programming is
+a little bit like writing all of these decisions down in a way that the computer can understand.
+
+But only a little bit. One important difference is that the way we write those decisions for the computer—as
+instructions—makes it difficult to separate out decisions from each other sometimes. One instruction is often the
+consequence of several decisions—the decision to use a particular language, plus the decision to use a particular
+technology, plus the decision to allow a certain operation to happen, plus the decision to break the program up into
+these particular pieces, and possibly several others.
+
+This is a problem because decisions need to *change*. Sometimes what we want the program to do changes. Sometimes
+something in the outside world changes and we want our program to adapt. And sometimes (lots of times!) we just discover
+that we did something poorly and would like to go back and fix it. Everything in technology evolves, or it dies because
+it no longer serves its purpose.
+
+If programs really were just a big list of decisions, we could keep revising that list into eternity. Fancy new picture
+filter technology that you want to use? Add it to the list! Phone operating system changed underneath us? That's okay,
+you'll keep all the decisions that didn't have to do with the phone OS, and tack on new ones for the new version. But
+the way that programs are actually written, as instructions, this is much more expensive to do than to describe, because
+each decision could have touched many, many instructions and only the original programmer knows (or knew) how and why.
+
+I'd like to do something about that last bit. I'd like to try to work out a way for the how and why to be stored in the
+computer, along with the program, so that programming is much more like working with a big list of decisions than it is
+today. If my hunches are right, this could be the key to making technology that actually is timeless, instead of going
+obsolete in a few years and having to be rewritten. While we're at it, it might unlock the power of programming for more
+people by making it easier to express what you want from the computer, which is another thing I'm pretty passionate
+about.
+
+There are a lot of details needed to make this work that I haven't described, and the programmers reading this probably
+have a lot of questions[^questions] about how this could work, how my approach is different from (or similar to) various
+things that have come before, and why what I'm proposing actually could solve the problems I'm attempting to tackle.
+I'll try to lay out some of those details over the coming weeks, as I explore and learn.
+
+Which brings me to what I'm actually doing: I've left my job in order to set out on my own for a little while. I want
+some space to look for answers to this question of timelessness, and I'm comfortable with burning down my savings a
+little bit in exchange for complete freedom and lack of responsibility. There are several possible directions this
+experiment could end up going in—maybe it results in a commercial startup, maybe an open-source project or a research
+project. I may end up shipping out to the west coast to be with like-minded people, or not. The first step toward any of
+these outcomes though is for me to start putting some code where my mouth is. Any version of the thing I'm trying to
+tackle is pretty wildly ambitious, and a prototype is what I think I need both to give myself confidence that there's
+anything to my claims, and to communicate to others the potential applications of what I'm imagining—which may even
+stretch beyond merely making programming easier.
+
+On a personal note, I'm just incredibly excited to be doing this. For a long time I've wanted an opportunity to try to
+tackle something that could be considered a contribution to the study of how humans and computers interact with each
+other, and when the inspiration for this particular idea came upon me I knew I had to act on it. Even if failure is
+likely, the experience of *trying and failing* still sounds pretty glorious to me right now—at the very least, I'll
+learn some important things on a topic about which I'm passionate. And one nice thing about taking a complete moonshot
+is that even if you fall 80% short, 20% of the way to the moon is still plenty opportunity to see some exciting new
+things.
+
+So wish me luck! And if all goes well, there will be some interesting demos here in the next few months.
+
+[^questions]: From programmers with whom I've discussed this, the first reaction to this formulation of the problem is
+    often, ‘So you just want to abstract over *everything*.’ While this isn't exactly wrong, it's not quite the point.
+    There's a huge flaw in wanting to simply build better or higher-level abstractions to solve the change problem—now
+    those abstractions become the thing that's difficult to change. I have thoughts about this, but they'll have to wait
+    for another post.

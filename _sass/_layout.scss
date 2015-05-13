@@ -165,8 +165,20 @@
     }
 }
 
+.footnotes {
+    font-size: 80%;
+}
+
+.footnotes:before {
+    border-top: 1px solid $grey-color-light;
+    content: '';
+    display: block;
+    margin: $spacing-unit 0 1em * $base-line-height;
+    width: 20%;
+}
+
 .glyph {
-    fill: currentcolor;
+    fill: currentColor;
     height: 1.2em;
     vertical-align: -15%;
     width: 1.2em;
