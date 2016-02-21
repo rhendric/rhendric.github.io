@@ -72,6 +72,6 @@ So wish me luck! And if all goes well, there will be some interesting demos here
 
 [^questions]: From programmers with whom I've discussed this, the first reaction to this formulation of the problem is
     often, ‘So you just want to abstract over *everything*.’ While this isn't exactly wrong, it's not quite the point.
-    There's a huge flaw in wanting to simply build better or higher-level abstractions to solve the change problem—now
+    There's a huge flaw in wanting to simply build better or higher-level abstractions to solve the change problem: now
     those abstractions become the thing that's difficult to change. I have thoughts about this, but they'll have to wait
     for another post.

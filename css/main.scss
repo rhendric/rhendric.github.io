@@ -6,19 +6,19 @@
 
 
 // Our variables
-$base-font-family: Helvetica, Calibri, Arial, sans-serif;
+$base-font-family: Lato, 'Lato!download', sans-serif;
 $base-font-size:   16px;
 $small-font-size:  $base-font-size * 0.875;
-$base-line-height: 1.5;
+$base-line-height: 1.4;
 
 $spacing-unit:     30px;
 
-$text-color:       #111;
-$background-color: #fdfdfd;
+$text-color:       #222;
+$background-color: #f9f9f9;
 $brand-color:      #2a7ae2;
 
 $grey-color:       #828282;
-$grey-color-light: lighten($grey-color, 40%);
+$grey-color-light: lighten($grey-color, 35%);
 $grey-color-dark:  darken($grey-color, 25%);
 
 $on-palm:          600px;
@@ -32,11 +32,19 @@ $on-laptop:        800px;
     }
 }
 
+@mixin glyph($name) {
+    content: map_get($glyph-map, $name);
+    display: inline-block;
+    font-family: 'glyphs';
+}
+
 
 
 // Import partials from `sass_dir` (defaults to `_sass`)
 @import
         "base",
+        "fonts",
+        "glyph-map",
         "layout",
         "syntax-highlighting"
 ;

@@ -7,8 +7,11 @@
     <meta name="description" content="{{ site.description }}">
 
     <link rel="stylesheet" href="{{ "/css/main.css" | prepend: site.baseurl }}">
-    <link rel="canonical" href="{{ page.url | replace:'/index.html','' | prepend: site.baseurl | prepend: site.url }}">
+    <link rel="canonical" href="{{ page.url | remove: '/index.html' | prepend: site.baseurl | prepend: site.url }}">
     <link rel="alternate" type="application/rss+xml" href="{{ "/feed.xml" | prepend: site.baseurl | prepend: site.url }}">
+    {% if page.is_post %}
+    <link rel="first" href="{{ site.posts.last.url | prepend: site.baseurl }}">
+    <link rel="last" href="{{ site.posts.first.url | prepend: site.baseurl }}">
+    {% endif %}
     <script async src="{{ "/scripts/svg4everybody.min.js" | prepend: site.baseurl }}"></script>
-    <script async src="{{ "/scripts/main.js" | prepend: site.baseurl }}"></script>
 </head>

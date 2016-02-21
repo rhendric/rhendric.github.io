@@ -165,8 +165,29 @@
     }
 }
 
+.post-footer {
+    font-size: 80%;
+    font-weight: normal;
+    text-align: center;
+}
+
+.post-footer:before {
+    border-top: 1px solid $grey-color-light;
+    content: '';
+    display: block;
+    margin: 0 auto $spacing-unit;
+    width: 50%;
+}
+
 .footnotes {
     font-size: 80%;
+
+    h1, h2, h3, h4, h5, h6,
+    p, blockquote, pre,
+    ul, ol, dl, figure,
+    %vertical-rhythm {
+        margin-bottom: $spacing-unit * 0.4;
+    }
 }
 
 .footnotes:before {
@@ -177,24 +198,174 @@
     width: 20%;
 }
 
-.glyph {
-    fill: currentColor;
-    height: 1.2em;
-    vertical-align: -15%;
-    width: 1.2em;
+$shadow-height: 16px;
+
+.dynamic-footnotes-footer {
+    background: $background-color;
+    background: linear-gradient(
+        rgba($background-color, 0) 0,
+        rgba($background-color, 0.81) 5px,
+        rgba($background-color, 0.88) 6px,
+        rgba($background-color, 0.94) 7px,
+        $background-color 8px);
+    bottom: 0;
+    position: fixed;
+    transform: translate3d(0, 9999px, 0);
+    width: 100%;
 }
 
-.spacer {
-    display: inline-block;
-    width: 0.3em;
+.dynamic-footnote-ref {
+    color: darken($brand-color, 15%);
+}
+
+.dynamic-footnotes {
+    bottom: -$shadow-height;
+    font-size: round($base-font-size * 0.8);
+    line-height: round($base-font-size * 0.8 * $base-line-height);
+    overflow-y: hidden;
+    position: relative;
+
+    h1, h2, h3, h4, h5, h6,
+    p, blockquote, pre,
+    ul, ol, dl, figure,
+    %vertical-rhythm {
+        margin-bottom: $spacing-unit / 3;
+    }
+
+    .reversefootnote {
+        display: none;
+    }
+}
+
+.dynamic-footnotes:before {
+    margin: 0 0 -1px;
+}
+
+.dynamic-footnote-body {
+    color: $text-color;
+}
+
+.dynamic-footnotes-scroller, .dynamic-footnotes-clipper, .dynamic-footnotes-anchor {
+    bottom: 0;
+    left: 0;
+    height: 0;
+    overflow: visible;
+    position: absolute;
+    right: 0;
+}
+
+.dynamic-footnotes-bounded {
+    overflow-x: hidden;
+    overflow-y: scroll;
+
+    .dynamic-footnotes-clipper {
+        overflow: hidden;
+        position: relative;
+        right: auto;
+    }
+
+    .dynamic-footnotes-anchor {
+        bottom: auto;
+    }
+}
+
+.dynamic-footnotes-pusher {
+    bottom: 0;
+    left: 0;
+    margin: 15px $spacing-unit $shadow-height 0;
+    position: absolute;
+    right: 0;
+
+    & > ol > li {
+        color: darken($brand-color, 15%);
+        margin: $spacing-unit / 3 0;
+        opacity: 0;
+        transform: translate3d(0, 0, 0); // Prevents jitter in Firefox
+    }
+
+}
+
+.use-transitions {
+    .dynamic-footnotes {
+        transition: height 0.5s;
+    }
+
+    .dynamic-footnotes-pusher > ol > li {
+        transition-duration: 0.5s;
+        transition-property: opacity, transform;
+    }
+
+
+    .dynamic-footnotes-pusher {
+        transition: transform 0.5s;
+    }
+}
+
+.dynamic-footnote-visible {
+    opacity: 1 !important;
+}
+
+@media print {
+    .dynamic-footnotes-footer,
+    .dynamic-footnotes,
+    .dynamic-footnotes-scroller,
+    .dynamic-footnotes-clipper,
+    .dynamic-footnotes-anchor,
+    .dynamic-footnotes-pusher {
+        height: auto !important;
+        max-height: none !important;
+        overflow-x: visible !important;
+        overflow-y: visible !important;
+        position: static !important;
+        transform: none !important;
+        width: auto !important;
+    }
+
+    .dynamic-footnotes-pusher > ol > li {
+        margin-top: $spacing-unit / 3 !important;
+    }
+
+    .dynamic-footnotes-padding {
+        display: none !important;
+    }
+
+    .dynamic-footnote-hidden {
+        opacity: 1 !important;
+    }
+}
+
+.subscribe a::before {
+    font-size: 1.25em;
+    line-height: $base-line-height / 1.25;
+    padding-right: 0.3em;
+    vertical-align: -5%;
+}
+
+.subscribe-with-github::before {
+    @include glyph('github');
+}
+
+.subscribe-with-rss::before {
+    @include glyph('rss');
+}
+
+.prev-link::before {
+    @include glyph('footer-ornament-left');
+    padding-right: 0.5em;
+}
+
+.next-link::after {
+    @include glyph('footer-ornament-right');
+    padding-left: 0.5em;
 }
 
 .separator {
+    cursor: text;
     display: inline-block;
     text-align: center;
-    width: 1em;
+    padding: 0 0.5em;
 }
 
-.subscribe a {
+.subscribe a, .prev-link, .next-link {
     white-space: nowrap;
 }

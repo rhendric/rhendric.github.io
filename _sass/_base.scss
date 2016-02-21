@@ -127,25 +127,13 @@ blockquote {
  */
 pre,
 code {
-    font-size: 15px;
-    border: 1px solid $grey-color-light;
-    border-radius: 3px;
-    background-color: #eef;
-}
-
-code {
-    padding: 1px 5px;
+    color: lighten($text-color, 20%);
+    font-family: Inconsolata, monospace;
 }
 
 pre {
     padding: 8px 12px;
-    overflow-x: scroll;
-
-    > code {
-        border: 0;
-        padding-right: 0;
-        padding-left: 0;
-    }
+    overflow-x: auto;
 }
 
 
@@ -185,23 +173,6 @@ pre {
 
 
 /**
- * Icons
- */
-.icon {
-
-    > svg {
-        display: inline-block;
-        width: 16px;
-        height: 16px;
-        vertical-align: middle;
-
-        path {
-            fill: $grey-color;
-        }
-    }
-}
-
-/**
  * Formatting
  */
 dd, li, p {
@@ -209,7 +180,7 @@ dd, li, p {
 }
 
 strong {
-    font-weight: bold;
+    font-weight: normal;
 }
 
 hr {

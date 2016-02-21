@@ -11,15 +11,14 @@ layout: default
         <span class="post-meta">{{ post.date | date: site.date_format }}</span>
 
         <h2>
-          <a class="post-link" href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a>
+          <a class="post-link" href="{{ post.url | remove: '/index.html' | prepend: site.baseurl }}">{{ post.title }}</a>
         </h2>
       </li>
     {% endfor %}
   </ul>
 
-  <p class="subscribe">subscribe
-    <span class="separator">&middot;</span> <a href="{{ "/feed.xml" | prepend: site.baseurl }}">{% include glyph.svg id="rss" %}<span class="spacer"></span>with RSS</a>
-    <span class="separator">&middot;</span> <a href="https://github.com/rhendric/rhendric.github.io/subscription">{% include glyph.svg id="github" %}<span class="spacer"></span>with GitHub</a>
-  </p>
+  <div class="subscribe">
+    subscribe<span class="separator">&middot;</span><a class="subscribe-with-rss" href="{{ "/feed.xml" | prepend: site.baseurl }}">with RSS</a><span class="separator">&middot;</span><a class="subscribe-with-github" href="https://github.com/rhendric/rhendric.github.io/subscription">with GitHub</a>
+  </div>
 
 </div>

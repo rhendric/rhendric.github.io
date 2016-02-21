@@ -2,7 +2,7 @@ title: Ryan's Dev Blog
 description: ""
 baseurl: ""
 url: http://rhendric.github.io
-permalink: /posts/:year/:month/:title
+permalink: /posts/:year/:month/:title/index.html
 timezone: America/New_York
 date_format: "%Y %b %-d"
 kramdown:
